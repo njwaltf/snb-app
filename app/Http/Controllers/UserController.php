@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Notification;
 
 class UserController extends Controller
 {
@@ -13,7 +15,8 @@ class UserController extends Controller
     public function index()
     {
         return view('dashboard-user.profile.index', [
-            'title' => 'SNB | Profile'
+            'title' => 'SNB | Profile',
+            'notifications' => Notification::where('user_id', auth()->user()->id)->get()
         ]);
     }
 
@@ -48,7 +51,8 @@ class UserController extends Controller
     {
         return view('dashboard-user.profile.edit', [
             'u' => User::where('id', auth()->user()->id)->first(),
-            'title' => 'SNB | Profile'
+            'title' => 'SNB | Profile',
+            'notifications' => Notification::where('user_id', auth()->user()->id)->get()
         ]);
     }
 
