@@ -60,7 +60,7 @@
         </div>
     </section>
     <!-- Pricing section-->
-    <section class="bg-light py-5 border-bottom">
+    {{-- <section class="bg-light py-5 border-bottom">
         <div class="container px-5 my-5">
             <div class="text-center mb-5">
                 <h2 class="fw-bolder">Layanan Kami</h2>
@@ -215,13 +215,13 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Testimonials section-->
     <section class="py-5 border-bottom">
         <div class="container px-5 my-5 px-5">
             <div class="text-center mb-5">
-                <h2 class="fw-bolder">Customer testimonials</h2>
-                <p class="lead mb-0">Our customers love working with us</p>
+                <h2 class="fw-bolder">Apa Kata Mereka?</h2>
+                <p class="lead mb-0">Lihat testimoni dari beberapa orang</p>
             </div>
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-6">
