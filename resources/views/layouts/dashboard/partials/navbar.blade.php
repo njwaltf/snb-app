@@ -7,16 +7,48 @@
                     <i class="ti ti-menu-2"></i>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link nav-icon-hover" href="javascript:void(0)">
-                    <i class="ti ti-bell-ringing"></i>
-                    <div class="notification bg-primary rounded-circle"></div>
-                </a>
-            </li>
         </ul>
         <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
                 <a href="/dashboard/reports/create" class="btn btn-primary">Buat laporan <i class="ti ti-plus"></i></a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="ti ti-bell-ringing"></i>
+                        @if ($notifications->count())
+                            <div class="notification bg-primary rounded-circle"></div>
+                        @endif
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
+                        @if ($notifications->count())
+                            @foreach ($notifications as $notif)
+                                <div class="message-body">
+                                    <a href="/dashboard/reports/{{ $notif->report_id }}"
+                                        class="d-flex align-items-center dropdown-item">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <p class="mb-0 fs-3 h5"><strong>{{ $notif->title }}</strong></p>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <p>{{ $notif->desc }}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endforeach
+                        @else
+                            <div class="message-body">
+                                <a href="/dashboard/profile" class="d-flex align-items-center dropdown-item">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <p class="mb-0 fs-3 h5"><strong>Belum ada notifikasi</strong></p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        @endif
+                    </div>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
                         data-bs-toggle="dropdown" aria-expanded="false">

@@ -122,6 +122,10 @@
                             enctype="multipart/form-data">
                             @csrf
                             @method('put')
+                            <input type="hidden" name="report_id" value="{{ $report->id }}">
+                            <input type="hidden" name="user_id" value="{{ $report->user->id }}">
+                            <input type="hidden" name="desc" value="{{ 'laporan kamu memiliki status baru!' }}">
+                            <input type="hidden" name="title" value="{{ 'Pembaruan status' }}">
                             <select class="form-select @error('status') is-invalid @enderror"
                                 aria-label="Default select example" id="status" name="status">
                                 <option value="{{ 'Dalam Proses' }}" @if ($report->status === 'Dalam Proses') selected @endif>

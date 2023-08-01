@@ -2,17 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Notification;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    // public $notifications = Notification::where('user_id', auth()->user()->id)->get();
+
     public function index()
     {
         return view('dashboard-user.dashboard', [
-            'title' => 'SNB | Dashboard'
+            'title' => 'SNB | Dashboard',
+            'notifications' => Notification::where('user_id', auth()->user()->id)->get()
         ]);
     }
 

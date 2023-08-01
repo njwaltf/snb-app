@@ -7,24 +7,28 @@ use App\Models\BullyType;
 use Illuminate\Routing\Controller;
 use App\Http\Requests\StoreReportRequest;
 use App\Http\Requests\UpdateReportRequest;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
     public $title = 'SNB | Report';
+    // public $notifications = Notification::where('user_id', auth()->user()->id)->get();
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
-        $reports = Report::query();
+        // $reports = Report::query();
 
-        $reports->when($request->status, function ($query) use ($request) {
-            return $query->where('status', $request->status)->where('user_id', auth()->user()->id)->first();
-        });
+        // $reports->when($request->status, function ($query) use ($request) {
+        //     return $query->where('status', $request->status)
+        //         ->where('user_id', auth()->user()->id)->first();
+        // });
         return view('dashboard-user.report.index', [
             'title' => $this->title,
-            'reports' => $reports->get()
+            'reports' => Report::where('user_id', auth()->user()->id)->latest()->get(),
+            'notifications' => Notification::where('user_id', auth()->user()->id)->get()
         ]);
         // Report::where('user_id', auth()->user()->id)->latest()->get()
     }
@@ -36,7 +40,8 @@ class ReportController extends Controller
     {
         return view('dashboard-user.report.create', [
             'title' => $this->title,
-            'bully_types' => BullyType::all()
+            'bully_types' => BullyType::all(),
+            'notifications' => Notification::where('user_id', auth()->user()->id)->get()
         ]);
     }
 
@@ -77,7 +82,8 @@ class ReportController extends Controller
     {
         return view('dashboard-user.report.show', [
             'report' => $report,
-            'title' => $this->title
+            'title' => $this->title,
+            'notifications' => Notification::where('user_id', auth()->user()->id)->get()
         ]);
     }
 
@@ -89,7 +95,8 @@ class ReportController extends Controller
         return view('dashboard-user.report.edit', [
             'title' => $this->title,
             'bully_types' => BullyType::all(),
-            'report' => $report
+            'report' => $report,
+            'notifications' => Notification::where('user_id', auth()->user()->id)->get()
         ]);
     }
 

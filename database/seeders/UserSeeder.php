@@ -21,7 +21,6 @@ class UserSeeder extends Seeder
             'prof_pic' => 'profile/yohan.jpg',
             'password' => Hash::make('12345678'),
             'grade' => '1',
-            'role' => 0
         ]);
         // User::create([
         //     'full_name' => 'Admin',

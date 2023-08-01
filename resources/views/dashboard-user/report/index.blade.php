@@ -29,7 +29,7 @@
                     <div class="card-body p-4">
                         <h5 class="card-title fw-semibold mb-4">Daftar Laporan Anda</h5>
                         <div class="table-responsive">
-                            <form action="/dashboard/reports" method="get" class="d-inline">
+                            {{-- <form action="/dashboard/reports" method="get" class="d-inline">
                                 @csrf
                                 <div class="row my-3">
                                     <div class="col-lg-3">
@@ -41,18 +41,11 @@
                                             <option value="Ditolak">Ditolak</option>
                                         </select>
                                     </div>
-                                    {{-- <div class="col-lg-3">
-                                        <select name="isAnonym" class="form-select" style="margin-top: 30px">
-                                            <option value="">Semua</option>
-                                            <option value="{{ 0 }}">Publik</option>
-                                            <option value="{{ 1 }}">Anonim</option>
-                                        </select>
-                                    </div> --}}
                                     <div class="col-lg-3" style="padding-top: 31px">
                                         <button type="submit" class="btn btn-primary">Cari</button>
                                     </div>
                                 </div>
-                            </form>
+                            </form> --}}
                             <table class="table text-nowrap mb-0 align-middle table-hover display" id="myTable">
                                 <thead class="text-dark fs-4">
                                     <tr>

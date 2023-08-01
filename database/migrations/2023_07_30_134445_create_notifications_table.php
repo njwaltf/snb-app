@@ -11,8 +11,10 @@ return new class extends Migration {
     public function up() : void
     {
         Schema::create('notifications', function (Blueprint $table) {
-            $table->id('notification_id');
+            $table->id();
             $table->foreignId('report_id');
+            $table->foreignId('user_id');
+            $table->string('title');
             $table->string('desc');
             $table->timestamps();
         });

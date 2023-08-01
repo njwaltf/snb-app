@@ -47,7 +47,7 @@ Route::post('/dashboard/profile/update', [UserController::class, 'update'])->nam
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store'])->name('register');
 Route::post('/login', [LoginController::class, 'auth'])->name('login');
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // admin

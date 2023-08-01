@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Report;
 use App\Models\BullyType;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -89,7 +90,21 @@ class ReportAdminController extends Controller
             'status' => ['required'],
             // 'user_id' => ['nullable'],
         ]);
+        $data = [
+            'user_id' => $request->user_id,
+            'report_id' => $request->report_id,
+            'title' => $request->title,
+            'desc' => $request->desc
+        ];
+        if ($validatedData['status'] === 'Dalam Proses') {
+            $data['desc'] = 'Laporan kamu sedang dalam proses';
+        } elseif ($validatedData['status'] === 'Telah Diterima') {
+            $data['desc'] = 'Laporan kamu sudah diterima!';
+        } else {
+            $data['desc'] = 'Yah laporan kamu ditolak :(';
+        }
         $report = Report::where('id', $report->id)->update($validatedData);
+        Notification::create($data);
         return redirect('/dashboard/admin/reports/')->with('successEdit', 'Laporan berhasil diperbarui!');
     }
 
