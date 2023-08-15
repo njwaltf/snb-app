@@ -10,6 +10,11 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ReportAdminController;
+use App\Http\Controllers\EvidenceController;
+use App\Http\Controllers\EvidenceAdminController;
+use App\Http\Controllers\BullyTypeController;
+use App\Models\Notification;
+use App\Models\BullyType;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,3 +62,21 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // Route::post('/register/admin', [RegisterAdminController::class, 'store'])->name('admin-register');
 
 Route::get('/dashboard/admin', [AdminController::class, 'index'])->name('admin-dashboard');
+
+// evidence
+Route::resource('/dashboard/admin/evidences', EvidenceAdminController::class);
+Route::resource('/dashboard/evidences', EvidenceController::class);
+Route::resource('/dashboard/admin/bully-types', BullyTypeController::class);
+Route::get('/dashboard/tentang-bully', function(){
+    return view('dashboard-user.tentang.index',[
+        'title' => 'SNB | Info',
+        'notifications' => Notification::where('user_id', auth()->user()->id)->get(),
+        'types' => BullyType::all()
+    ]);
+});
+Route::get('/dashboard/tutorial', function(){
+    return view('dashboard-user.tutorial.index',[
+        'title' => 'SNB | Info',
+        'notifications' => Notification::where('user_id', auth()->user()->id)->get()
+    ]);
+});

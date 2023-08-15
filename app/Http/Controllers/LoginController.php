@@ -22,7 +22,12 @@ class LoginController extends Controller
             'password' => ['required']
         ]);
 
-        if ($request['username'] == 'admin_snb' && $request['password'] == 'admin123') {
+        if ($request['username'] == 'kepsek@admin.com' && $request['password'] == 'admin_01') {
+            $request->session()->regenerate();
+            return redirect()->intended('/dashboard/admin');
+        }
+
+        if ($request['username'] == 'bk@admin.com' && $request['password'] == 'admin_02') {
             $request->session()->regenerate();
             return redirect()->intended('/dashboard/admin');
         }

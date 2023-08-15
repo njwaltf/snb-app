@@ -2,25 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Notification;
 use App\Models\Report;
+use App\Models\Notification;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 
-class DashboardController extends Controller
+class EvidenceController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    // public $notifications = Notification::where('user_id', auth()->user()->id)->get();
-
+    protected $title = 'SNB | Evidence';
     public function index()
     {
-        return view('dashboard-user.dashboard', [
-            'title' => 'SNB | Dashboard',
-            'notifications' => Notification::where('user_id', auth()->user()->id)->get(),
-            'reports' => Report::where('user_id', auth()->user()->id)->latest()->skip(0)->take(2)->latest()->get(),
-            'evidences' => Report::where('user_id', auth()->user()->id)->latest()->skip(0)->take(4)->latest()->get()
+        return view('dashboard-user.evidence.index',[
+            'title' => $this->title,
+            'evidences' => Report::where('user_id', auth()->user()->id)->latest()->get(),
+            'notifications' => Notification::where('user_id', auth()->user()->id)->get()
         ]);
     }
 
@@ -43,7 +40,7 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Report $report)
     {
         //
     }
@@ -51,7 +48,7 @@ class DashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Report $report)
     {
         //
     }
@@ -59,7 +56,7 @@ class DashboardController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Report $report)
     {
         //
     }
@@ -67,7 +64,7 @@ class DashboardController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Report $report)
     {
         //
     }

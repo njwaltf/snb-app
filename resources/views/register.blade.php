@@ -16,7 +16,7 @@
                                     <img src="{{ asset('assets/images/logos/snb-logo-text.png') }}" width="180"
                                         alt="">
                                 </a>
-                                <p class="text-center">Buat akun untuk melakukan laporan</p>
+                                <p class="text-center">Buat akun untuk membuat laporan</p>
                                 <form action="{{ route('register') }}" method="POST">
                                     @csrf
                                     <div class="mb-3">

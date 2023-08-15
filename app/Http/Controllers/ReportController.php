@@ -118,14 +118,13 @@ class ReportController extends Controller
             'place' => ['required'],
             'incident_total' => ['required'],
             'evidence_img' => ['image', 'file'],
-            'status' => ['required'],
             'user_id' => ['required']
         ]);
         if ($request->file('evidence_img')) {
             $validatedData['evidence_img'] = $request->file('evidence_img')->store('evidences');
         }
         $report = Report::where('id', $report->id)->update($validatedData);
-        return redirect('/dashboard/reports/')->with('successEdit', 'Laporan kamu berhasil diperbarui!');
+        return redirect('/dashboard/reports/')->with('successEdit', "Laporan $request->title berhasil diperbarui!");
     }
 
     /**

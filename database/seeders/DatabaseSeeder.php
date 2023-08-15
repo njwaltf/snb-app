@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\ReportSeeder;
 use Database\Seeders\BullyTypeSeeder;
+use Database\Seeders\AdminSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,5 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call(BullyTypeSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(ReportSeeder::class);
+        $this->call(AdminSeeder::class);
     }
 }

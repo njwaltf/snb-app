@@ -16,7 +16,6 @@ return new class extends Migration {
             $table->string('name');
             $table->string('email');
             $table->string('password');
-            $table->string('prof_pic');
             $table->integer('role')->default(1);
             // 1 = admin
             // 2 = superadmin

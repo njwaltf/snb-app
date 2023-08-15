@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('container')
     <!-- Header-->
-    <header class="bg-dark py-5">
+    <header class="bg-dark py-5" id="header">
         <div class="container px-5">
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-6">
@@ -11,8 +11,8 @@
                         <p class="lead text-white-50 mb-4">Ciptakan lingkungan sekolah yang sehat serta ramah anak. Jangan
                             takut untuk melaporkan kasus bully kami siap menampung laporan anda</p>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Buat Laporan</a>
-                            <a class="btn btn-outline-light btn-lg px-4" href="#!">Pelajari Lebih</a>
+                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/register">Buat Laporan</a>
+                            <a class="btn btn-outline-light btn-lg px-4" href="#features">Pelajari Lebih</a>
                         </div>
                     </div>
                 </div>
@@ -27,8 +27,7 @@
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-person-lock"></i>
                     </div>
                     <h2 class="h4 fw-bolder">Kerahasiaan</h2>
-                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
-                        sentence and probably just keep going until we run out of words.</p>
+                    <p>Kamu dapat membuat laporan sebagai anonim (tanpa identitas) sehingga anda tak perlu khawatir akan identitas saat melapor disini.</p>
                     <a class="text-decoration-none" href="#!">
                         Lihat detail
                         <i class="bi bi-arrow-right"></i>
@@ -38,8 +37,7 @@
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-person-heart"></i>
                     </div>
                     <h2 class="h4 fw-bolder">Keamanan</h2>
-                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
-                        sentence and probably just keep going until we run out of words.</p>
+                    <p>Kami menyediakan dan menjaga keamanan data serta identitas anda tidak perlu khawatir akan kebocoran data dan kerahasiaan.</p>
                     <a class="text-decoration-none" href="#!">
                         Lihat detail
                         <i class="bi bi-arrow-right"></i>
@@ -49,8 +47,7 @@
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-stopwatch"></i>
                     </div>
                     <h2 class="h4 fw-bolder">Kecepatan</h2>
-                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
-                        sentence and probably just keep going until we run out of words.</p>
+                    <p>Kami menyediakan layanan laporan yang cepat dan mudah digunakan.Laporan kamu akan kami proses secepat mungkin maksimal 3 hari kerja.</p>
                     <a class="text-decoration-none" href="#!">
                         Lihat detail
                         <i class="bi bi-arrow-right"></i>
@@ -59,165 +56,8 @@
             </div>
         </div>
     </section>
-    <!-- Pricing section-->
-    {{-- <section class="bg-light py-5 border-bottom">
-        <div class="container px-5 my-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bolder">Layanan Kami</h2>
-                <p class="lead mb-0">Kami menyediakan 3 layanan unggulan</p>
-            </div>
-            <div class="row gx-5 justify-content-center">
-                <!-- Pricing card free-->
-                <div class="col-lg-6 col-xl-4">
-                    <div class="card mb-5 mb-xl-0">
-                        <div class="card-body p-5">
-                            <div class="small text-uppercase fw-bold text-muted">Free</div>
-                            <div class="mb-3">
-                                <span class="display-4 fw-bold">$0</span>
-                                <span class="text-muted">/ mo.</span>
-                            </div>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    <strong>1 users</strong>
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    5GB storage
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Unlimited public projects
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Community access
-                                </li>
-                                <li class="mb-2 text-muted">
-                                    <i class="bi bi-x"></i>
-                                    Unlimited private projects
-                                </li>
-                                <li class="mb-2 text-muted">
-                                    <i class="bi bi-x"></i>
-                                    Dedicated support
-                                </li>
-                                <li class="mb-2 text-muted">
-                                    <i class="bi bi-x"></i>
-                                    Free linked domain
-                                </li>
-                                <li class="text-muted">
-                                    <i class="bi bi-x"></i>
-                                    Monthly status reports
-                                </li>
-                            </ul>
-                            <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Choose plan</a></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Pricing card pro-->
-                <div class="col-lg-6 col-xl-4">
-                    <div class="card mb-5 mb-xl-0">
-                        <div class="card-body p-5">
-                            <div class="small text-uppercase fw-bold">
-                                <i class="bi bi-star-fill text-warning"></i>
-                                Pro
-                            </div>
-                            <div class="mb-3">
-                                <span class="display-4 fw-bold">$9</span>
-                                <span class="text-muted">/ mo.</span>
-                            </div>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    <strong>5 users</strong>
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    5GB storage
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Unlimited public projects
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Community access
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Unlimited private projects
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Dedicated support
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Free linked domain
-                                </li>
-                                <li class="text-muted">
-                                    <i class="bi bi-x"></i>
-                                    Monthly status reports
-                                </li>
-                            </ul>
-                            <div class="d-grid"><a class="btn btn-primary" href="#!">Choose plan</a></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Pricing card enterprise-->
-                <div class="col-lg-6 col-xl-4">
-                    <div class="card">
-                        <div class="card-body p-5">
-                            <div class="small text-uppercase fw-bold text-muted">Enterprise</div>
-                            <div class="mb-3">
-                                <span class="display-4 fw-bold">$49</span>
-                                <span class="text-muted">/ mo.</span>
-                            </div>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    <strong>Unlimited users</strong>
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    5GB storage
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Unlimited public projects
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Community access
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Unlimited private projects
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Dedicated support
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    <strong>Unlimited</strong>
-                                    linked domains
-                                </li>
-                                <li class="text-muted">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Monthly status reports
-                                </li>
-                            </ul>
-                            <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Choose plan</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
     <!-- Testimonials section-->
-    <section class="py-5 border-bottom">
+    <section class="py-5 border-bottom" id="testimoni">
         <div class="container px-5 my-5 px-5">
             <div class="text-center mb-5">
                 <h2 class="fw-bolder">Apa Kata Mereka?</h2>
@@ -232,10 +72,9 @@
                                 <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i>
                                 </div>
                                 <div class="ms-4">
-                                    <p class="mb-1">Thank you for putting together such a great product. We loved
-                                        working with you and the whole team, and we will be recommending you to others!
+                                    <p class="mb-1">Terima kasih berkat adanya website ini aku jadi lebih happy disekolah para pembully sudah diproses sekolah
                                     </p>
-                                    <div class="small text-muted">- Client Name, Location</div>
+                                    <div class="small text-muted">Anonim</div>
                                 </div>
                             </div>
                         </div>
@@ -247,10 +86,8 @@
                                 <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i>
                                 </div>
                                 <div class="ms-4">
-                                    <p class="mb-1">The whole team was a huge help with putting things together for
-                                        our company and brand. We will be hiring them again in the near future for
-                                        additional work!</p>
-                                    <div class="small text-muted">- Client Name, Location</div>
+                                    <p class="mb-1">Aku pernah di-bully hingga tas ku dibongkar oleh teman sekelas ku, sehingga aku tidak tahan dan memutuskan untuk pindah sekolah. Tapi aku takut mau lapor guru, semenjak ada aplikasi ini aku jadi bisa melaporkan tindakan bully tanpa khawatir deh</p>
+                                    <div class="small text-muted">Fadilah</div>
                                 </div>
                             </div>
                         </div>

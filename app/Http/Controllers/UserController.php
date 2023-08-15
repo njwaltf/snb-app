@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -13,7 +14,8 @@ class UserController extends Controller
     public function index()
     {
         return view('dashboard-user.profile.index', [
-            'title' => 'SNB | Profile'
+            'title' => 'SNB | Profile',
+            'notifications' => Notification::where('user_id', auth()->user()->id)->get()
         ]);
     }
 
@@ -48,7 +50,8 @@ class UserController extends Controller
     {
         return view('dashboard-user.profile.edit', [
             'u' => User::where('id', auth()->user()->id)->first(),
-            'title' => 'SNB | Profile'
+            'title' => 'SNB | Profile',
+            'notifications' => Notification::where('user_id', auth()->user()->id)->get()
         ]);
     }
 
@@ -69,7 +72,7 @@ class UserController extends Controller
         $data = $request->validate([
             'full_name' => ['required', 'max:100'],
             'email' => ['required', 'email', 'max:100'],
-            'nis' => ['required', 'min:10', 'max:10'],
+            'nisn' => ['required', 'min:10', 'max:10'],
             'username' => ['required', 'min:4', 'max:20'],
             'grade' => ['required'],
             'prof_pic' => ['file', 'image']

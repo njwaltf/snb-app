@@ -59,12 +59,12 @@
                                 id="username" name="username" value="{{ old('username', $u->username) }}">
                         </div>
                         <div class="mb-4">
-                            <label for="nis" class="form-label">NIS</label>
+                            <label for="nisn" class="form-label">NISN</label>
                             <input type="text"
-                                class="form-control @error('nis')
+                                class="form-control @error('nisn')
                             is-invalid
                         @enderror"
-                                id="nis" name="nis" value="{{ old('nis', $u->nis) }}">
+                                id="nisn" name="nisn" value="{{ old('nisn', $u->nisn) }}">
                         </div>
                         <div class="mb-4">
                             <label for="prof_pic" class="form-label">Upload Profile</label>

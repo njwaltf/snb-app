@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Admin;
 use App\Models\Report;
 use App\Models\BullyType;
 use App\Models\Notification;
@@ -19,6 +20,7 @@ class ReportAdminController extends Controller
     {
         $reports = Report::query();
 
+        // for filter status
         $reports->when($request->status, function ($query) use ($request) {
             return $query->where('status', $request->status);
         });
@@ -26,7 +28,7 @@ class ReportAdminController extends Controller
         return view('admin.report.index', [
             'title' => $this->title,
             'reports' => $reports->get(),
-            'admins' => User::where('id', 2)->get()
+            'admins' => Admin::where('id', 2)->get(),
         ]);
     }
 

@@ -10,7 +10,6 @@
         @csrf
         @method('put')
         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-        <input type="hidden" name="status" value="{{ 'Dalam Proses' }}">
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
@@ -256,8 +255,8 @@
         </div>
         <div class="row">
             <div class="col-lg-3">
-                <button type="submit" class="btn btn-primary" style="margin-right: 15px">Kirim Laporan <i
-                        class="ti ti-send"></i></button>
+                <button type="submit" class="btn btn-primary" style="margin-right: 15px">Edit Laporan <i
+                        class="ti ti-edit"></i></button>
                 <a href="/dashboard/reports" class="btn btn-outline-warning">Batal</a>
             </div>
         </div>

@@ -15,6 +15,9 @@ return new class extends Migration {
             $table->string('name');
             $table->text('desc');
             $table->string('image');
+            $table->integer('status');
+            // 0 = hide
+            // 1 = show
             $table->timestamps();
         });
     }

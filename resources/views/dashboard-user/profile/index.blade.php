@@ -48,9 +48,9 @@
                             value="{{ auth()->user()->username }}" disabled>
                     </div>
                     <div class="mb-4">
-                        <label for="nis" class="form-label">NIS</label>
-                        <input type="text" class="form-control" id="nis" name="nis"
-                            value="{{ auth()->user()->nis }}" disabled>
+                        <label for="nisn" class="form-label">NISN</label>
+                        <input type="text" class="form-control" id="nisn" name="nisn"
+                            value="{{ auth()->user()->nisn }}" disabled>
                     </div>
                 </div>
             </div>

@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('username')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('nis')->unique()->nullable();
+            $table->string('nisn')->unique()->nullable();
             $table->string('prof_pic')->nullable();
             $table->string('grade')->nullable();
             // $table->integer('role')->default(0);
