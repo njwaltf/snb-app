@@ -6,7 +6,6 @@ use App\Models\User;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Notification;
 
 class UserController extends Controller
 {

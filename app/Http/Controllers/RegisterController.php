@@ -23,7 +23,7 @@ class RegisterController extends Controller
             'email' => ['required', 'email', 'max:100', 'unique:users'],
             'username' => ['required', 'unique:users', 'max:20', 'min:4'],
             'full_name' => ['required', 'max:100'],
-            'nis' => ['required', 'unique:users', 'max:10', 'min:10'],
+            'nisn' => ['required', 'unique:users', 'max:10', 'min:10'],
             'password' => ['required', 'min:8'],
             'prof_pic' => ['required'],
             'grade' => ['required']

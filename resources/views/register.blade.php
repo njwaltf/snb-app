@@ -58,11 +58,11 @@
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">NIS</label>
                                         <input type="text"
-                                            class="form-control @error('nis')
+                                            class="form-control @error('nisn')
                                         is-invalid
                                         @enderror"
-                                            id="exampleInputEmail1" name="nis" value="{{ old('nis') }}">
-                                        @error('nis')
+                                            id="exampleInputEmail1" name="nisn" value="{{ old('nisn') }}">
+                                        @error('nisn')
                                             <p class="invalid">{{ $message }}</p>
                                         @enderror
                                     </div>
